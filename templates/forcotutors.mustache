@@ -1,0 +1,20 @@
+<table class="table" style="margin-top: 50px">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Dernière connexion</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+{{#students}}
+    <tr class="{{ class }}">
+        <th scope="row"><strong>{{ lastname }}, {{ firstname }}</strong></th>
+        <td><a heref="mailto:{{ email }}">{{ email }}</a></td>
+        <td>{{ lastlogin }}</td>
+        <td><a href="{{ url }}" class="btn btn-secondary active" role="button" aria-pressed="true">Statistiques</a></td>
+    </tr>
+{{/students}}
+    </tbody>
+</table>
