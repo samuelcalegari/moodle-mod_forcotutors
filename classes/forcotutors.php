@@ -78,7 +78,7 @@ class forcotutors implements renderable, templatable {
             $now = time();
             $class= "";
 
-            $url = get_config('forcotutors', 'mstatsurl') . '/autologin?email=' . url_encode($user->email) .'&username=' . url_encode($user->username);
+            $url = get_config('forcotutors', 'mstatsurl') . '/autologin?email=' . urlencode($user->email) .'&username=' . urlencode($user->username);
             $days = get_config('forcotutors', 'days');
             $days2 = get_config('forcotutors', 'days2');
 
