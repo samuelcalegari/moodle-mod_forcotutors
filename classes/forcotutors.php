@@ -82,6 +82,8 @@ class forcotutors implements renderable, templatable {
             $days = get_config('forcotutors', 'days');
             $days2 = get_config('forcotutors', 'days2');
 
+            $lastaccess = $user->lastaccess == 0 ? 'Non Connecté' : date("d/m/Y à H:i", $user->lastaccess);
+
             if($user->lastaccess < $now - ($days2*24*60*60))
                 $class = 'table-danger';
             else if($user->lastaccess < $now - ($days*24*60*60))
@@ -94,7 +96,7 @@ class forcotutors implements renderable, templatable {
                         'email'=>$user->email,
                         'class'=>$class,
                         'url'=>$url,
-                        'lastlogin'=> date("d/m/Y à H:i", $user->lastaccess)
+                        'lastlogin'=> $lastaccess
                 )
             );
         }

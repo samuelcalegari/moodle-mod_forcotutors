@@ -39,4 +39,4 @@ $string['configmstatsurl'] = 'Direct link to Moodle Stats platform';
 $string['days'] = 'Alert Level 1';
 $string['configdays'] = 'Number of days from which a level 1 alert is generated';
 $string['days2'] = 'Alert Level 2';
-$string['configdays'] = 'Number of days from which a level 2 alert is generated';
+$string['configdays2'] = 'Number of days from which a level 2 alert is generated';
