@@ -88,6 +88,8 @@ class forcotutors implements renderable, templatable {
                 $class = 'table-danger';
             else if($user->lastaccess < $now - ($days*24*60*60))
                 $class = 'table-warning';
+            else
+                $class = 'table-success';
 
             array_push($this->students,
                 array(  'id'=>$user->id,
