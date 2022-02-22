@@ -30,6 +30,7 @@ use templatable;
 use context_course;
 use stdClass;
 use ArrayIterator;
+use moodle_url;
 
 
 /**
@@ -98,6 +99,7 @@ class forcotutors implements renderable, templatable {
                         'email'=>$user->email,
                         'class'=>$class,
                         'url'=>$url,
+                        'picture' => new moodle_url('/user/pix.php/'.$user->id.'/f2.jpg'),
                         'lastlogin'=> $lastaccess
                 )
             );
