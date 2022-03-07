@@ -76,6 +76,7 @@ class forcotutors implements renderable, templatable {
 
         foreach ($users  as $user ) {
 
+            global $DB;
             $now = time();
             $class= "";
 
@@ -83,14 +84,17 @@ class forcotutors implements renderable, templatable {
             $days = get_config('forcotutors', 'days');
             $days2 = get_config('forcotutors', 'days2');
 
-            $lastaccess = $user->lastaccess == 0 ? 'Non Connecté' : date("d/m/Y à H:i", $user->lastaccess);
+            $lastaccesscourse = $DB->get_field('user_lastaccess', 'timeaccess', array('courseid' => $this->course, 'userid' => $user->id));
 
-            if($user->lastaccess < $now - ($days2*24*60*60))
+            if($lastaccesscourse < $now - ($days2*24*60*60))
                 $class = 'table-danger';
-            else if($user->lastaccess < $now - ($days*24*60*60))
+            else if($lastaccesscourse < $now - ($days*24*60*60))
                 $class = 'table-warning';
             else
                 $class = 'table-success';
+
+            $lastaccess = $user->lastaccess == 0 ? 'Non Connecté' : date("d/m/Y à H:i", $user->lastaccess);
+            $lastaccesscourse = $lastaccesscourse == 0 ? 'Non Connecté' : date("d/m/Y à H:i", $lastaccesscourse);
 
             array_push($this->students,
                 array(  'id'=>$user->id,
@@ -100,7 +104,8 @@ class forcotutors implements renderable, templatable {
                         'class'=>$class,
                         'url'=>$url,
                         'picture' => new moodle_url('/user/pix.php/'.$user->id.'/f2.jpg'),
-                        'lastlogin'=> $lastaccess
+                        'lastaccess'=> $lastaccess,
+                        'lastaccesscourse' => $lastaccesscourse,
                 )
             );
         }
