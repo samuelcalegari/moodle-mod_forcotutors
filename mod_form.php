@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot.'/course/moodleform_mod.php');
 
 /**
- * Miro Translate settings form.
+ * forcotutors settings form.
  *
  * @package   mod_forcotutors
  * @copyright 2022 Samuel Calegari <samuel.calegari@univ-perp.fr>
