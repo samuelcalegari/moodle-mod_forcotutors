@@ -26,6 +26,28 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
+ * Returns the information on whether the module supports a feature
+ *
+ * See {@link plugin_supports()} for more info.
+ *
+ * @param string $feature FEATURE_xx constant for requested feature
+ * @return mixed true if the feature is supported, null if unknown
+ */
+function forcotutors_supports($feature) {
+
+    switch($feature) {
+        case FEATURE_MOD_INTRO:
+            return false;
+        case FEATURE_SHOW_DESCRIPTION:
+            return false;
+        case FEATURE_BACKUP_MOODLE2:
+            return true;
+        default:
+            return null;
+    }
+}
+
+/**
  * Given an object containing all the necessary data,
  * (defined by the form in mod_form.php) this function
  * will create a new instance and return the id number
