@@ -24,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022040700;            // The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2023022300;            // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2018050800;            // Requires this Moodle version
 $plugin->component = 'mod_forcotutors';   // Full name of the plugin (used for diagnostics)
-$plugin->release = 'v1.2';
+$plugin->release = 'v1.3';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron      = 0;
