@@ -61,11 +61,11 @@ class backup_forcotutors_activity_task extends backup_activity_task {
 
         // Link to the list of newmodules.
         $search = '/('.$base.'\/mod\/forcotutors\/index.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@FOROC_TUTORSINDEX*$2@$', $content);
+        $content = preg_replace($search, '$@FORCOTUTORSINDEX*$2@$', $content);
 
         // Link to forcotutors view by moduleid.
         $search = '/('.$base.'\/mod\/forcotutors\/view.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@FORCO_TUTORSVIEWBYID*$2@$', $content);
+        $content = preg_replace($search, '$@FORCOTUTORSVIEWBYID*$2@$', $content);
 
         return $content;
     }
